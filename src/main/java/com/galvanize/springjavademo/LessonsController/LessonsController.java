@@ -34,6 +34,7 @@ public class LessonsController {
         if (this.repository.existsById(id)){
             Lesson oldLesson = this.repository.findById(id).get();
             oldLesson.setDeliveredOn(lesson.getDeliveredOn());
+            oldLesson.setTitle(lesson.getTitle());
 
             this.repository.save(oldLesson);
         }
